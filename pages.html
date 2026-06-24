@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipper - Services</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+<img src="./images/logo.png">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+}
+
+.nav-links{
+    list-style:none;
+}
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+#pages-toggle{
+    display:none;
+}
+
+.dropdown label{
+    display:block;
+    padding:15px 20px;
+    cursor:pointer;
+    color:#333;
+    font-weight:600;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:220px;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    list-style:none;
+    display:none;
+    z-index:100;
+}
+
+.dropdown-menu li{
+    border-bottom:1px solid #eee;
+}
+
+.dropdown-menu li:last-child{
+    border-bottom:none;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:15px 20px;
+    color:#333;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.dropdown-menu li a:hover{
+    background:#ff4d00;
+    color:white;
+}
+
+/* Desktop */
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+/* Mobile */
+#pages-toggle:checked ~ .dropdown-menu{
+    display:block;
+}
+
+@media (max-width:768px){
+
+    .dropdown{
+        width:100%;
+    }
+
+    .dropdown-menu{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-top:1px solid #eee;
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display:none;
+    }
+
+    #pages-toggle:checked ~ .dropdown-menu{
+        display:block;
+    }
+}
+</style>
+</head>
+<body>
+
+<ul class="nav-links">
+
+<li class="dropdown">
+
+    <input type="checkbox" id="pages-toggle">
+
+    <label for="pages-toggle">
+        Pages <i class="fa-solid fa-chevron-down"></i>
+    </label>
+
+    <ul class="dropdown-menu">
+        <li><a href="blog.html">Blog Posts</a></li>
+        <li><a href="blog-single.html">Blog Single</a></li>
+        <li><a href="landing.html">Landing Single</a></li>
+        <li><a href="elements.html">Elements</a></li>
+        <li><a href="email-template.html">Email Template</a></li>
+        <li><a href="404.html">404 Error Page</a></li>
+    </ul>
+
+</li>
+
+</ul>
+
+</body>
+</html>

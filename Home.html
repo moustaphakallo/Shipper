@@ -1,0 +1,1459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shipper – Logistics & Cargo</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
+<img src="image.jpg">
+<a href="file:///C:/Users/hp/Desktop/Kallo1/home.html"></a>
+  <a href="home.html">Home</a>
+  <img src="./images/logo.png">
+ <style>
+    /* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== UTILITIES ===== */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #e07b2a;
+  margin-bottom: .4rem;
+}
+
+.center {
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #111;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+
+h4 {
+  font-size: .95rem;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: .6rem 1.4rem;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity .2s, background .2s;
+}
+
+.btn-orange {
+  background: #e07b2a;
+  color: #fff;
+}
+
+.btn-orange:hover {
+  opacity: .88;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, .6);
+}
+
+.btn-outline:hover {
+  border-color: #fff;
+}
+
+.btn-dark {
+  background: #111;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn-dark:hover {
+  background: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 2rem;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.logo small {
+  font-size: 10px;
+  font-weight: 400;
+  opacity: .7;
+  display: block;
+  line-height: 1;
+}
+
+.logo-icon {
+  color: #e07b2a;
+  font-size: 1.4rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, .75);
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e07b2a;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: .35rem .7rem;
+  color: #fff;
+  font-size: 13px;
+  width: 140px;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, .5);
+}
+
+.search-box button {
+  background: #e07b2a;
+  border: none;
+  color: #fff;
+  padding: .35rem .6rem;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background:
+    linear-gradient(rgba(10, 20, 50, .75), rgba(10, 20, 50, .75)),
+    url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=80') center / cover no-repeat;
+  color: #fff;
+  min-height: 520px;
+}
+
+.hero-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 1.5rem;
+  gap: 2rem;
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+.hero-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #e07b2a;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, .7);
+  margin-bottom: 1.75rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .15);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+
+.play-btn:hover {
+  background: rgba(255, 255, 255, .3);
+}
+
+/* ===== INFO BAR ===== */
+.info-bar {
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+  position: relative;
+  z-index: 10;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.info-item {
+  padding: 1.5rem 2rem;
+  border-right: 1px solid #eee;
+}
+
+.info-item:last-child {
+  border-right: none;
+}
+
+.info-item h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: .3rem;
+}
+
+.info-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+.newsletter {
+  display: flex;
+  gap: .5rem;
+  margin-top: .5rem;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: .5rem .8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+}
+
+.newsletter input:focus {
+  border-color: #e07b2a;
+}
+
+.info-fab {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e07b2a;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  background: #fafafa;
+}
+
+.services .container {
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 2.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-item {
+  padding: 1rem;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: .5rem;
+}
+
+.service-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+.orange {
+  color: #e07b2a;
+}
+
+/* ===== WHY CHOOSE ===== */
+.why-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+
+.why-text {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.why-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.why-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: .2rem;
+}
+
+.why-item h4 {
+  font-size: .95rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.why-item p {
+  font-size: 13px;
+  color: #666;
+  margin-top: .2rem;
+}
+
+.why-image img {
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+/* ===== STATS ===== */
+.stats-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+
+.stats-image img {
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.stats-text {
+  background: #fff;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats-text h2 {
+  margin-bottom: .75rem;
+}
+
+.stats-text > p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.stats-numbers {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1;
+}
+
+.stat small {
+  font-size: 11px;
+  color: #888;
+}
+
+/* ===== FREIGHT ===== */
+.freight {
+  background: #f9f9f9;
+}
+
+.freight-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.freight-left h2 {
+  margin-bottom: 1.5rem;
+}
+
+.freight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.freight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+.freight-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.freight-item h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.freight-item p {
+  font-size: 12px;
+  color: #777;
+  margin-top: .15rem;
+}
+
+.freight-right {
+  padding-top: 4rem;
+}
+
+.freight-right p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* ===== QUOTE ===== */
+.quote h2 {
+  margin-bottom: 2rem;
+}
+
+.quote-inner {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.quote-form {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: .75rem;
+  margin-bottom: .75rem;
+  flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+  min-width: 120px;
+  padding: .6rem .85rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fafafa;
+  color: #222;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: #e07b2a;
+  background: #fff;
+}
+
+.form-row textarea {
+  min-height: 100px;
+  resize: vertical;
+  width: 100%;
+}
+
+.form-row select {
+  cursor: pointer;
+}
+
+.quote-form .btn-orange {
+  margin-top: .5rem;
+}
+
+.quote-aside {
+  background: #e07b2a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.quote-aside h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: .75rem;
+}
+
+.quote-aside p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, .85);
+}
+
+.quote-aside .btn-dark {
+  display: block;
+  text-align: center;
+}
+
+/* ===== TESTIMONIAL ===== */
+.testimonial {
+  background:
+    linear-gradient(rgba(10, 20, 50, .8), rgba(10, 20, 50, .8)),
+    url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1400&q=80') center / cover;
+  color: #fff;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.testi-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.testi-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+  border: 3px solid #e07b2a;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #e07b2a;
+  line-height: 0;
+  vertical-align: -.5em;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  font-size: 15px;
+  color: rgba(255, 255, 255, .85);
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.testi-name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, .6);
+  margin-bottom: 1.5rem;
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .3);
+  display: inline-block;
+}
+
+.dot.active {
+  background: #e07b2a;
+}
+
+/* ===== BLOG ===== */
+.blog h2 {
+  margin-bottom: 2.5rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.blog-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+
+.blog-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .09);
+}
+
+.blog-img {
+  height: 200px;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.blog-body {
+  padding: 1.25rem;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: .6rem;
+}
+
+.blog-cat {
+  background: #e07b2a;
+  color: #fff;
+  padding: .15rem .5rem;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.blog-card h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: .5rem;
+  line-height: 1.4;
+}
+
+.blog-card p {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: .75rem;
+}
+
+.read-more {
+  font-size: 13px;
+  color: #e07b2a;
+  font-weight: 600;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #aaa;
+  padding: 4rem 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: .9rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: .5px;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.footer-col ul li a {
+  font-size: 13px;
+  color: #aaa;
+  transition: color .2s;
+}
+
+.footer-col ul li a:hover {
+  color: #e07b2a;
+}
+
+.footer-brand .footer-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: .5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-bottom a {
+  color: #e07b2a;
+}
+
+.footer-socials {
+  display: flex;
+  gap: .75rem;
+}
+
+.footer-socials a {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #aaa;
+  transition: border-color .2s, color .2s;
+}
+
+.footer-socials a:hover {
+  border-color: #e07b2a;
+  color: #e07b2a;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .freight-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .freight-right {
+    padding-top: 0;
+  }
+
+  .quote-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0a1432;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .hero-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-item {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info-item:last-child {
+    border-bottom: none;
+  }
+
+  .info-fab {
+    display: none;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-section {
+    grid-template-columns: 1fr;
+  }
+
+  .why-image {
+    display: none;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-image {
+    display: none;
+  }
+
+  .stats-numbers {
+    justify-content: space-around;
+  }
+
+  .freight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .stats-numbers {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+ 
+.menu-toggle-checkbox{display:none;}
+.menu-btn{display:none;}
+@media (max-width:768px){
+.menu-btn{
+display:block;
+color:white;
+font-size:28px;
+cursor:pointer;
+}
+.menu-toggle-checkbox:checked ~ .nav-links{
+display:flex;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER / HERO ========== -->
+<header class="hero">
+
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="logo">
+    <div class="logo-icon">●</div>
+    <div class="logo-text">
+      <h2>Shipper</h2>
+      <span>Logistics & Cargo</span>
+    </div>
+  </div>
+
+  <!-- Checkbox caché qui gère l'état ouvert/fermé -->
+  <input type="checkbox" id="menuToggle" class="menu-toggle-checkbox">
+
+  <!-- Menu -->
+  <ul class="nav-links">
+    <li><a href="Home.html" class="active">Home</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="Pages.html">Pages</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <!-- Search -->
+  <div class="nav-right">
+    <div class="search-box">
+      <input type="text" placeholder="Search here...">
+      <button>🔍</button>
+    </div>
+
+    <!-- Mobile Menu : le label fait office de bouton -->
+    <label for="menuToggle" class="menu-btn">
+      ☰
+    </label>
+  </div>
+
+</nav>
+
+  <div class="hero-body container">
+    <div class="hero-text">
+      <p class="hero-tag">DELIVERED ON TIME.</p>
+      <h1>Your Gateway To Any Destination In The World.</h1>
+      <p class="hero-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum consequuntur illum facere.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-orange">Start Now</a>
+        <a href="#" class="btn btn-outline">Get a Quote</a>
+      </div>
+    </div>
+    <div class="hero-play">
+      <button class="play-btn">&#9654;</button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== INFO BAR ========== -->
+<div class="info-bar">
+  <div class="container info-grid">
+    <div class="info-item">
+      <h4>Call Our Support</h4>
+      <p>24 / 7 Support Line</p>
+      <p>&#128222; +1(25) 234 537 4587</p>
+    </div>
+    <div class="info-item">
+      <h4>Our Location</h4>
+      <p>Shipper, #2278 Honey street, NY-40007</p>
+    </div>
+    <div class="info-item">
+      <h4>Our Newsletter</h4>
+      <div class="newsletter">
+        <input type="email" placeholder="Email Address"/>
+        <button class="btn btn-orange">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <button class="info-fab">?</button>
+</div>
+
+<!-- ========== SERVICES ========== -->
+<section class="services section">
+  <div class="container">
+    <p class="section-tag">WHAT WE DO</p>
+    <h2>What We Offer To Highest<br/>Quality Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon orange" style="height: 100px; width: 100%; ">
+           <img src="https://www.shutterstock.com/image-photo/pepsi-delivery-truck-fayetteville-nc-260nw-2637522533.jpg" alt="">
+            
+        </div>
+        <h3>Delivered Packages</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon orange"  style="height: 100px; width: 100%; ">
+            <img src="https://geometas.com/static/seo/country_coverage.jpg" alt="">
+        </div>
+        <h3>Countries Covered</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon orange" style="height: 100px; width: 100%; ">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcjraArC4RsStTX7-1Nf6U0h1ZzAjPp1HHw&s" alt="">
+        </div>
+        <h3>Tons of Goods</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="why-section">
+  <div class="why-text">
+    <p class="section-tag">OUR INFO</p>
+    <h2>Why choose our</h2>
+    <div class="why-items">
+      <div class="why-item">
+        <span class="why-icon orange">&#128065;</span>
+        <div>
+          <h4>Our Vision</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum elit.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-icon orange">&#128230;</span>
+        <div>
+          <h4>Estimate Shipping</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum elit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="why-image">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Logistics warehouse"/>
+  </div>
+</section>
+
+<!-- ========== STATS / DIGITAL FREIGHT ========== -->
+<section class="stats-section">
+  <div class="stats-image">
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="Delivery team"/>
+  </div>
+
+  <div class="stats" style="display: flex; gap: 2rem; justify-content: space-between;">
+  <div class="stat" style="height: 50px; width: 50px; ">
+    <span class="icon" >
+      <img src="https://e7.pngegg.com/pngimages/168/115/png-clipart-responsive-web-design-web-browser-computer-icons-red-web-website-search-engine-optimization-web-design.png" alt="">
+    </span>
+    <h2 class="counter" data-target="791">0</h2>
+    <p style="color: red;">Clients Worldwide</p>
+  </div>
+
+  <div class="stat" style="height: 50px; width: 50px; ">
+    <span class="icon">
+      <img src="https://quillbot.com/blog/wp-content/uploads/2025/10/html-red-color-names-300x300.webp" alt="">
+    </span>
+    <h2 class="counter" data-target="515">0</h2>
+    <p style="color: red;">Delivered Goods</p>
+  </div>
+
+  <div class="stat" style="height: 50px; width: 50px; ">
+    <span class="icon">
+      <img src="https://cars.bonhams.com/_next/image.jpg?url=https%3A%2F%2Fimg2.bonhams.com%2Fimage%3Fsrc%3DImages%2Flive%2F2021-03%2F31%2F25067525-2-82.jpg&w=2400&q=75" alt="">
+    </span>
+    <h2 class="counter" data-target="488">0</h2>
+    <p style="color: red;">Miles Driver</p>
+  </div>
+</div>
+
+<script>
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+  const target = +counter.dataset.target;
+  const duration = 2000; // 2 secondes
+  const increment = target / (duration / 16);
+
+  function updateCounter() {
+    let current = +counter.innerText;
+
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.innerText = target;
+    }
+  }
+
+  updateCounter();
+});
+</script>
+</section>
+
+<!-- ========== FREIGHT SERVICES ========== -->
+<section class="freight section">
+  <div class="container freight-inner">
+    <div class="freight-left">
+      <p class="section-tag">SERVICES</p>
+      <h2>We provide full assistance in freight and warehousing</h2>
+      <div class="freight-grid">
+        <div class="freight-item">
+          <span class="freight-icon orange">&#9992;</span>
+          <div>
+            <h4>Air Freight</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea.</p>
+          </div>
+        </div>
+        <div class="freight-item">
+          <span class="freight-icon orange">&#128663;</span>
+          <div>
+            <h4>Road Freight</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea.</p>
+          </div>
+        </div>
+        <div class="freight-item">
+          <span class="freight-icon orange">&#9875;</span>
+          <div>
+            <h4>Ocean Freight</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea.</p>
+          </div>
+        </div>
+        <div class="freight-item">
+          <span class="freight-icon orange">&#127912;</span>
+          <div>
+            <h4>Projects and Fine Art</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea.</p>
+          </div>
+        </div>
+        <div class="freight-item">
+          <span class="freight-icon orange">&#127970;</span>
+          <div>
+            <h4>Warehousing</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea.</p>
+          </div>
+        </div>
+        <div class="freight-item">
+          <span class="freight-icon orange">&#128196;</span>
+          <div>
+            <h4>Custom Brokerage</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="freight-right">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum consequuntur illum facere amet elit blanditiis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut ea lorem ipsum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== QUOTE FORM ========== -->
+<section class="quote section">
+  <div class="container">
+    <p class="section-tag center">OUR QUOTE</p>
+    <h2 class="center">Request A Quote</h2>
+    <div class="quote-inner">
+      <form class="quote-form">
+        <div class="form-row">
+          <input type="text" placeholder="Name"/>
+          <input type="email" placeholder="Email"/>
+          <input type="tel" placeholder="Phone"/>
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Address"/>
+          <input type="date"/>
+          <input type="time"/>
+        </div>
+        <div class="form-row">
+          <select>
+            <option>Choose Service</option>
+            <option>Air Freight</option>
+            <option>Road Freight</option>
+            <option>Ocean Freight</option>
+            <option>Warehousing</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <textarea placeholder="Describe your issue"></textarea>
+        </div>
+        <button type="submit" class="btn btn-orange">Send Mail</button>
+      </form>
+      <aside class="quote-aside">
+        <h3>How Can We Help You!</h3>
+        <p>We understand the importance of approaching each work integrally and believe in the power of simple and easy communication.</p>
+        <a href="#" class="btn btn-dark">Contact Us</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIAL ========== -->
+<section class="testimonial">
+  <div class="container testi-inner">
+    <div class="testi-avatar">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer"/>
+    </div>
+    <blockquote>
+      <span class="quote-mark">&#10077;</span>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Valida beatae dolorembus minima est! Quas minima eius aut mollitia. maximos adipisci quaerat facere aperiam ea non ullam facilis quos, voluptate rem ullam dolor haecit fuga dolore nisi atque, alias vitae odit, voluptatem nostrum dolorum temporibus.
+    </blockquote>
+    <p class="testi-name">— Customer, <em>Worldwide</em></p>
+    <div class="testi-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BLOG ========== -->
+<section class="blog section">
+  <div class="container">
+    <p class="section-tag center">RECENT AND LATEST</p>
+    <h2 class="center">Recent Articles</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-img" style="background:url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&q=80') center/cover"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">CSS</span> <span>&#128197; Jun 20, 2021</span></div>
+          <h4>Fluid Responsive Typography With CSS Poly Fluid Sizing.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut.</p>
+          <a href="#" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img" style="background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80') center/cover"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">DESIGN</span> <span>&#128197; Jun 20, 2021</span></div>
+          <h4>An Abridged Cartoon Introduction To WebAssembly.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut.</p>
+          <a href="#" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img" style="background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80') center/cover"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-cat">TIPS</span> <span>&#128197; Jun 20, 2021</span></div>
+          <h4>Basic Patterns Mobile Navig Pros And Cons WebAss.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vitae ut.</p>
+          <a href="#" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Blog Posts</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">News & Media</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>What We Do</h4>
+      <ul>
+        <li><a href="#">Air Freight</a></li>
+        <li><a href="#">Ocean Freight</a></li>
+        <li><a href="#">Ground Freight</a></li>
+        <li><a href="#">Warehousing</a></li>
+        <li><a href="#">Packaging</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <span class="logo-icon">&#9679;</span> Shipper
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi.</p>
+      <p>&#128222; +1(25) 456-8900<br/>&#128222; +1(25) 456-8900</p>
+      <p>&#9993; shipper@email.com</p>
+      <p>&#128205; Shipper, #2278 Honey street, NY</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Shipper. All rights reserved. Design by <a href="#">Wikisource</a></p>
+    <div class="footer-socials">
+      <a href="#">f</a>
+      <a href="#">t</a>
+      <a href="#">in</a>
+      <a href="#">&#9654;</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

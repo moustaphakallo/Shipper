@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Stack Web Developer Recruitment Test</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<img src="./images/logo.png">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --primary:#ff7b00;
+      --dark:#0f172a;
+      --light:#f8fafc;
+      --gray:#94a3b8;
+      --shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f1f5f9;
+      color:#111827;
+      line-height:1.8;
+      overflow-x:hidden;
+    }
+
+    header{
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:white;
+      padding:120px 20px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    header::before{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(255,255,255,0.05);
+      border-radius:50%;
+      top:-120px;
+      right:-120px;
+    }
+
+    header::after{
+      content:'';
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:rgba(255,255,255,0.05);
+      border-radius:50%;
+      bottom:-100px;
+      left:-100px;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:10;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      line-height:1.2;
+      margin-bottom:20px;
+      text-transform:uppercase;
+      letter-spacing:3px;
+    }
+
+    .hero-content p{
+      max-width:850px;
+      margin:auto;
+      font-size:1.2rem;
+      color:#e2e8f0;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:40px;
+      padding:16px 40px;
+      background:var(--primary);
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:bold;
+      transition:0.4s;
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:#ff9500;
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.7rem;
+      color:var(--dark);
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:var(--gray);
+      max-width:700px;
+      margin:auto;
+    }
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3{
+      margin-bottom:20px;
+      color:var(--primary);
+      font-size:1.5rem;
+    }
+
+    .table-container{
+      overflow-x:auto;
+      background:white;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:20px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    table th{
+      background:var(--dark);
+      color:white;
+      padding:18px;
+      text-align:left;
+    }
+
+    table td{
+      padding:18px;
+      border-bottom:1px solid #e2e8f0;
+    }
+
+    .highlight{
+      color:var(--primary);
+      font-weight:bold;
+    }
+
+    footer{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,123,0,0.15);
+      color:var(--primary);
+      padding:8px 18px;
+      border-radius:40px;
+      font-size:0.9rem;
+      margin-bottom:20px;
+      font-weight:bold;
+    }
+
+    .timeline{
+      position:relative;
+      margin-top:40px;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      width:4px;
+      height:100%;
+      background:var(--primary);
+      transform:translateX(-50%);
+    }
+
+    .timeline-item{
+      width:50%;
+      padding:20px 40px;
+      position:relative;
+    }
+
+    .timeline-item:nth-child(odd){
+      left:0;
+      text-align:right;
+    }
+
+    .timeline-item:nth-child(even){
+      left:50%;
+    }
+
+    .timeline-content{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .timeline-content h4{
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+
+    @media(max-width:900px){
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      .timeline::before{
+        left:20px;
+      }
+
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        text-align:left !important;
+        padding-left:60px;
+        padding-right:10px;
+      }
+    }
+
+    @media(max-width:600px){
+
+      header{
+        padding:90px 20px;
+      }
+
+      .hero-content h1{
+        font-size:2rem;
+      }
+
+      section{
+        padding:70px 20px;
+      }
+
+      .section-title h2{
+        font-size:2rem;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="logo">
+    <div class="logo-icon">●</div>
+    <div class="logo-text">
+      <h2>Shipper</h2>
+      <span>Logistics & Cargo</span>
+    </div>
+  </div>
+
+  <!-- Checkbox caché qui gère l'état ouvert/fermé -->
+  <input type="checkbox" id="menuToggle" class="menu-toggle-checkbox">
+
+  <!-- Menu -->
+  <ul class="nav-links">
+    <li><a href="#" class="active">home</a></li>
+    <li><a href="#">about</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Pages</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <!-- Search -->
+  <div class="nav-right">
+    <div class="search-box">
+      <input type="text" placeholder="Search here...">
+      <button>🔍</button>
+    </div>
+
+    <!-- Mobile Menu : le label fait office de bouton -->
+    <label for="menuToggle" class="menu-btn">
+      ☰
+    </label>
+  </div>
+
+</nav>
+
+  <header>
+    <div class="hero-content">
+
+      <div class="badge">
+        RECRUITMENT TEST 2025
+      </div>
+
+      <h1>
+        FULL STACK WEB DEVELOPER
+      </h1>
+
+      <p>
+        Épreuve pratique de recrutement destinée aux développeurs web full stack.
+        Concevez une plateforme moderne, responsive et premium avec intégration IA,
+        galerie Google Drive, animations avancées et expérience utilisateur exceptionnelle.
+      </p>
+
+      <a href="#introduction" class="btn">
+        Commencer l’épreuve
+      </a>
+
+    </div>
+  </header>
+
+  <section id="introduction">
+
+    <div class="section-title">
+      <h2>1. Introduction</h2>
+      <p>
+        Bienvenue dans la phase finale du processus de recrutement.
+      </p>
+    </div>
+
+    <div class="card">
+      <p>
+        Nous avons le plaisir de vous informer que votre candidature au poste de
+        <span class="highlight">Développeur Web Full Stack</span>
+        a été retenue parmi les profils sélectionnés.
+        Cette épreuve a pour objectif d’évaluer vos compétences techniques,
+        votre créativité, votre capacité à utiliser les outils IA modernes
+        ainsi que votre aptitude à livrer un projet premium dans un délai limité.
+      </p>
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>2. Présentation du Poste</h2>
+      <p>
+        Responsabilités et compétences attendues.
+      </p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Rôle & Responsabilités</h3>
+
+        <p>
+          Développement front-end et back-end,
+          intégration API, optimisation des performances,
+          création de chatbot IA, déploiement cloud,
+          responsive design et expérience utilisateur premium.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Compétences Requises</h3>
+
+        <p>
+          HTML5, CSS3, JavaScript, React, Vue.js,
+          Node.js, Python, PHP, Google AI Studio,
+          GitHub Copilot, Tailwind CSS,
+          Framer Motion et Google Drive API.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>3. Modalités de l’Épreuve</h2>
+      <p>
+        Conditions générales de réalisation.
+      </p>
+    </div>
+
+    <div class="table-container">
+
+      <table>
+
+        <tr>
+          <th>Paramètre</th>
+          <th>Détail</th>
+        </tr>
+
+        <tr>
+          <td>Durée</td>
+          <td>24 heures maximum</td>
+        </tr>
+
+        <tr>
+          <td>Mode</td>
+          <td>Entièrement à distance</td>
+        </tr>
+
+        <tr>
+          <td>Outils IA</td>
+          <td>Utilisation fortement encouragée</td>
+        </tr>
+
+        <tr>
+          <td>Sujet</td>
+          <td>Choix libre entre les 2 sujets</td>
+        </tr>
+
+        <tr>
+          <td>Livraison</td>
+          <td>Lien du site + dépôt GitHub</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>4. Sujets Disponibles</h2>
+      <p>
+        Choisissez le projet qui vous inspire le plus.
+      </p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Import - Export</h3>
+
+        <p>
+          Créez un site moderne pour une entreprise spécialisée
+          dans le commerce international, le transport maritime,
+          le dédouanement et la logistique mondiale.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>BTP & Transport</h3>
+
+        <p>
+          Réalisez un site premium pour une société de BTP
+          et de transport logistique avec projets,
+          flotte de véhicules et infrastructures.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>5. Spécifications Techniques</h2>
+      <p>
+        Fonctionnalités obligatoires.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h4>Pages Obligatoires</h4>
+          <p>
+            Accueil, À propos, Services,
+            Galerie et Contact.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h4>Google Drive API</h4>
+          <p>
+            Synchronisation automatique des images
+            depuis un dossier Google Drive.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h4>Chatbot IA</h4>
+          <p>
+            Intégration d’un assistant intelligent
+            avec Google Gemini ou Dialogflow.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h4>Responsive Design</h4>
+          <p>
+            Compatibilité mobile, tablette et desktop.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>6. Critères d’Évaluation</h2>
+      <p>
+        Les éléments qui seront analysés par les recruteurs.
+      </p>
+    </div>
+
+    <div class="table-container">
+
+      <table>
+
+        <tr>
+          <th>Critère</th>
+          <th>Pondération</th>
+        </tr>
+
+        <tr>
+          <td>Design & UI/UX</td>
+          <td>25%</td>
+        </tr>
+
+        <tr>
+          <td>Fonctionnalités</td>
+          <td>20%</td>
+        </tr>
+
+        <tr>
+          <td>Google Drive</td>
+          <td>15%</td>
+        </tr>
+
+        <tr>
+          <td>Chatbot IA</td>
+          <td>15%</td>
+        </tr>
+
+        <tr>
+          <td>Animations & Performances</td>
+          <td>10%</td>
+        </tr>
+
+        <tr>
+          <td>Qualité du Code</td>
+          <td>10%</td>
+        </tr>
+
+        <tr>
+          <td>Innovation</td>
+          <td>5%</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>7. Technologies Recommandées</h2>
+      <p>
+        Outils modernes pour accélérer votre développement.
+      </p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Front-End</h3>
+
+        <p>
+          React.js, Next.js,
+          Tailwind CSS,
+          Bootstrap,
+          Material UI.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Animations</h3>
+
+        <p>
+          Framer Motion,
+          GSAP,
+          AOS,
+          CSS Animation,
+          Scroll Reveal.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Déploiement</h3>
+
+        <p>
+          Vercel,
+          Netlify,
+          GitHub Pages,
+          CI/CD,
+          Google Cloud.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>8. Livraison Finale</h2>
+      <p>
+        Modalités de soumission du projet.
+      </p>
+    </div>
+
+    <div class="card">
+      <p>
+        Vous devrez fournir :
+      </p>
+
+      <br>
+
+      <ul>
+        <li>✔️ Le lien du site déployé</li>
+        <li>✔️ Le dépôt GitHub complet</li>
+        <li>✔️ Un design premium et responsive</li>
+        <li>✔️ Une galerie connectée à Google Drive</li>
+        <li>✔️ Un chatbot IA fonctionnel</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <h2>
+      FULL STACK WEB DEVELOPER RECRUITMENT TEST
+    </h2>
+
+    <p>
+      Direction des Ressources Humaines — Mai 2025
+    </p>
+
+  </footer>
+
+</body>
+</html>
